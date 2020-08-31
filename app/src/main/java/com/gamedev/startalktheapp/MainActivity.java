@@ -59,6 +59,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onPrepared(MediaPlayer mediaPlayer) {
                 mMediaPlayer = mediaPlayer;
+                mMediaPlayer.setVolume(0,0);
                 // We want our video to play over and over so we set looping to true.
                 mMediaPlayer.setLooping(true);
                 // We then seek to the current posistion if it has been set and play the video.

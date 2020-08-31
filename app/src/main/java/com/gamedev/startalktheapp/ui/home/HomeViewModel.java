@@ -11,12 +11,12 @@ import java.util.ArrayList;
 public class HomeViewModel extends ViewModel {
 
     private MutableLiveData<String> mText;
-    MutableLiveData<ArrayList<User>> userLiveData;
+    private MutableLiveData<ArrayList<User>> userLiveData;
     ArrayList<User> userArrayList;
 
     public HomeViewModel() {
         mText = new MutableLiveData<>();
-        mText.setValue("This is home fragment");
+        mText.setValue("StarTalk");
 
         userLiveData = new MutableLiveData<>();
 
@@ -37,8 +37,10 @@ public class HomeViewModel extends ViewModel {
 
     private void populateList() {
         User user = new User();
-        user.setTitle("Darknight");
+        user.setTitle("Astronomical Numbers");
         user.setDescription("Best rating movie");
+
+
 
         userArrayList = new ArrayList<>();
         userArrayList.add(user);
@@ -47,9 +49,22 @@ public class HomeViewModel extends ViewModel {
         userArrayList.add(user);
         userArrayList.add(user);
         userArrayList.add(user);
+        userArrayList.add(user);
+        userArrayList.add(user);
+        userArrayList.add(user);
+        userArrayList.add(user);
+        userArrayList.add(user);
+        userArrayList.add(user);
+        userArrayList.add(user);
+        userArrayList.add(user);
+
     }
 
     public LiveData<String> getText() {
         return mText;
+    }
+
+    public MutableLiveData<ArrayList<User>> getUserLiveData() {
+        return userLiveData;
     }
 }

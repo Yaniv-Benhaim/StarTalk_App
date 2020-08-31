@@ -9,6 +9,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -22,10 +23,10 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerView.ViewH
 
 
     ArrayList<User> userArrayList;
-    Context context;
 
-    public RecyclerViewAdapter(Context context, ArrayList<User> userArrayList) {
-        this.context = context;
+
+    public RecyclerViewAdapter(ArrayList<User> userArrayList) {
+
         this.userArrayList = userArrayList;
     }
 
@@ -33,7 +34,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerView.ViewH
     @NonNull
     @Override
     public RecyclerView.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View rootView = LayoutInflater.from(parent.getContext()).inflate(R.layout.item,parent,false);
+        View rootView = LayoutInflater.from(parent.getContext()).inflate(R.layout.item2,parent,false);
         return new RecyclerViewViewHolder(rootView);
     }
 
@@ -43,8 +44,16 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerView.ViewH
         User user = userArrayList.get(position);
         RecyclerViewViewHolder viewHolder= (RecyclerViewViewHolder) holder;
 
+        if(position == 0||position == 1||position == 2||position == 3||position == 4)
+        {
+            viewHolder.item2.setVisibility(View.INVISIBLE);
+        } else
+
+    {
+
         viewHolder.txtView_title.setText(user.getTitle());
-        viewHolder.txtView_description.setText(user.getDescription());
+        viewHolder.imgView_icon.setImageResource(R.drawable.neil);
+    }
     }
 
     @Override
@@ -55,14 +64,15 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerView.ViewH
     class RecyclerViewViewHolder extends RecyclerView.ViewHolder {
         ImageView imgView_icon;
         TextView txtView_title;
-        TextView txtView_description;
+        ConstraintLayout item2;
+        //TextView txtView_description;
 
         public RecyclerViewViewHolder(@NonNull View itemView) {
             super(itemView);
-            imgView_icon = itemView.findViewById(R.id.imgView_icon);
-            txtView_title = itemView.findViewById(R.id.txtView_title);
-            txtView_description = itemView.findViewById(R.id.txtView_description);
-
+            imgView_icon = itemView.findViewById(R.id.imgView_icon2);
+            txtView_title = itemView.findViewById(R.id.txtView_title2);
+            //txtView_description = itemView.findViewById(R.id.txtView_description);
+             item2 = itemView.findViewById(R.id.item_2_id);
 
         }
     }

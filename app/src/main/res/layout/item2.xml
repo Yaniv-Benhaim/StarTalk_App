@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:id="@+id/item_2_id"
+    android:clickable="true"
+    android:background="@drawable/item_bg"
+    android:layout_marginLeft="16dp"
+    android:layout_marginRight="16dp"
+    android:layout_marginBottom="20dp"
+    android:focusable="true"
+    android:foreground="?attr/selectableItemBackgroundBorderless">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/item_course_img_cardview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="16dp"
+        app:cardCornerRadius="5dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+        <ImageView
+
+            android:scaleType="fitXY"
+            android:id="@+id/imgView_icon2"
+            android:layout_width="150dp"
+            android:layout_height="100dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/ic_launcher_background" />
+    </androidx.cardview.widget.CardView>
+
+    <TextView
+        android:id="@+id/txtView_title2"
+        android:layout_width="220dp"
+        android:layout_marginLeft="10dp"
+        android:layout_height="wrap_content"
+        android:text="StarTalk Explains"
+        android:layout_marginTop="10dp"
+        android:textColor="#000"
+        android:maxLines="2"
+        android:ellipsize="end"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@id/item_course_img_cardview"
+        app:layout_constraintTop_toTopOf="parent"
+        />
+
+    <TextView
+        android:id="@+id/txtView_title3"
+        android:layout_width="150dp"
+        android:layout_marginLeft="10dp"
+        android:layout_height="wrap_content"
+        android:text="Neil Degrasse Tyson answers questions you did'nt knew you had! "
+        android:textColor="#000"
+        android:maxLines="3"
+        android:ellipsize="end"
+        android:textSize="12dp"
+        android:layout_marginTop="20dp"
+        android:textStyle="normal"
+        app:layout_constraintStart_toEndOf="@id/item_course_img_cardview"
+        app:layout_constraintTop_toBottomOf="@id/txtView_title2"
+        />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginRight="20dp"
+        android:background="#33FFFFFF"
+        android:backgroundTint="#33FFFFFF"
+        android:src="@drawable/ic_baseline_play_arrow_24"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
